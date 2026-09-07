@@ -3,8 +3,8 @@ python tools/course_public_evaluator.py --week 01 --mode verify --execute-toolch
   "schemaVersion": 1,
   "week": 1,
   "mode": "verify",
-  "commitSha": "852c57eb0c32b85e5b63aec1a6a206b58882fe4a",
-  "evaluatedAt": "2026-09-07T04:04:12.573228+00:00",
+  "commitSha": "03e8bb13821a02c684d6e84ce0e45f8ccfa21480",
+  "evaluatedAt": "2026-09-07T04:12:22.984194+00:00",
   "status": "pass",
   "checks": [
     {
@@ -50,7 +50,7 @@ python tools/course_public_evaluator.py --week 01 --mode verify --execute-toolch
     {
       "id": "toolchain_4",
       "status": "pass",
-      "detail": "npm run test:smoke\n> dmi-react-native-starter@1.0.0 test:smoke\n> jest --no-watchman --cacheDirectory .jest-cache --ci --runInBand course-tests/smoke.test.tsx\n\n\nPASS course-tests/smoke.test.tsx\n  √ renders the reproducible baseline and resolves backend state (98 ms)\n\nTest Suites: 1 passed, 1 total\nTests:       1 passed, 1 total\nSnapshots:   0 total\nTime:        1.196 s, estimated 8 s\nRan all test suites matching /course-tests\\\\smoke.test.tsx/i."
+      "detail": "npm run test:smoke\n> dmi-react-native-starter@1.0.0 test:smoke\n> jest --no-watchman --cacheDirectory .jest-cache --ci --runInBand course-tests/smoke.test.tsx\n\n\nPASS course-tests/smoke.test.tsx\n  √ renders the reproducible baseline and resolves backend state (98 ms)\n\nTest Suites: 1 passed, 1 total\nTests:       1 passed, 1 total\nSnapshots:   0 total\nTime:        1.245 s, estimated 6 s\nRan all test suites matching /course-tests\\\\smoke.test.tsx/i."
     }
   ]
 }

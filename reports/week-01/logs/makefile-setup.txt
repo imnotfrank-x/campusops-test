@@ -9,7 +9,7 @@ npm warn deprecated abab@2.0.6: Use your platform's native atob() and btoa() met
 npm warn deprecated domexception@4.0.0: Use your platform's native DOMException instead
 npm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.
 
-added 970 packages, and audited 971 packages in 30s
+added 970 packages, and audited 971 packages in 28s
 
 184 packages are looking for funding
   run `npm fund` for details

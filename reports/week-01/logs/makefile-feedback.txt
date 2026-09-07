@@ -13,13 +13,13 @@ npm run test:smoke
 > dmi-react-native-starter@1.0.0 test:smoke
 > jest --no-watchman --cacheDirectory .jest-cache --ci --runInBand course-tests/smoke.test.tsx
 
-PASS course-tests/smoke.test.tsx (7.562 s)
-  √ renders the reproducible baseline and resolves backend state (1089 ms)
+PASS course-tests/smoke.test.tsx (5.347 s)
+  √ renders the reproducible baseline and resolves backend state (447 ms)
 
 Test Suites: 1 passed, 1 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total
-Time:        15.837 s
+Time:        7.499 s
 Ran all test suites matching /course-tests\\smoke.test.tsx/i.
 npm run audit:ci
 
@@ -47,7 +47,7 @@ npm run bundle:release
 
 Starting Metro Bundler
 
-Android Bundled 4957ms index.ts (581 modules)
+Android Bundled 4593ms index.ts (581 modules)
 
 › android bundles (1):
 _expo/static/js/android/index-0f63771edc03a8b8f3059e004167ff68.hbc (1.4MB)
@@ -56,3 +56,4 @@ _expo/static/js/android/index-0f63771edc03a8b8f3059e004167ff68.hbc (1.4MB)
 metadata.json (150B)
 
 Exported: dist/export
+Something prevented Expo from exiting, forcefully exiting now.
