@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "week": 1,
-  "commitSha": "a1318165f2bd6f703a9e408e6d81d35bdd17cd8e",
-  "generatedAt": "2026-09-06T17:32:40-06:00",
+  "commitSha": "852c57eb0c32b85e5b63aec1a6a206b58882fe4a",
+  "generatedAt": "2026-09-07T04:04:00.211644+00:00",
   "checks": [
     {
       "id": "backend-exitoso-mostrado-offline",
@@ -38,6 +38,13 @@
       "scenarioType": "nominal",
       "command": "make feedback",
       "evidence": "Repeticion asistida en la sesion de Oscar despues de trasladar la documentacion a docs: codigo 0; typecheck y lint aprobados; smoke con 1 suite y 1 prueba aprobadas; audit:ci dentro del umbral critico original (una advertencia moderada); exportacion Android completada con 581 modulos. Salida real: reports/week-01/logs/oscar-feedback-organizacion.txt. Pruebas y aplicacion conservadas."
+    },
+    {
+      "id": "preparacion-makefile-feedback",
+      "status": "pass",
+      "scenarioType": "nominal",
+      "command": "make setup && make feedback",
+      "evidence": "Validacion local asistida para el repositorio de pruebas campusops-test, sobre el SHA tecnico de este reporte. Instalacion, typecheck, lint, smoke, auditoria con el umbral original y bundle Android terminaron con codigo 0. Se conserva el workflow original y la descarga condicional del historial se realiza en Makefile. Salidas: reports/week-01/logs/makefile-setup.txt y reports/week-01/logs/makefile-feedback.txt. Las observaciones anteriores conservan sus logs historicos."
     }
   ]
 }

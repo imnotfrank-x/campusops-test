@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "week": 1,
-  "commitSha": "a1318165f2bd6f703a9e408e6d81d35bdd17cd8e",
+  "commitSha": "852c57eb0c32b85e5b63aec1a6a206b58882fe4a",
   "decision": "Para el diagnostico de semana 1 se elige conservar la prueba smoke existente con su doble determinista de backend y comprobar la transicion de respuesta exitosa a available. El alcance de esta semana es verificar el starter: una regresion reversible de esa transicion aborda el riesgo 3 del registro y el criterio 9 de la definicion del problema sin implementar los flujos futuros. La preparacion y la integracion fueron asistidas. La revision y repeticion independiente de Fernanda respaldan esta eleccion y sus limites; su analisis esta en docs/fernanda-diagnostico.md.",
   "alternatives": [
     "Usar la prueba smoke existente, cuyo doble resuelve getBackendHealth(), alterar temporalmente la rama de exito y comprobar tanto el fallo como la correccion de la transicion a available.",
@@ -28,6 +28,11 @@
       "command": "npm run test:smoke",
       "result": "Repeticion independiente registrada por Fernanda: estado original PASS con codigo 0; regresion offline FAIL con codigo 1 y expected available / received Backend: offline; restauracion PASS con codigo 0.",
       "evidence": "docs/fernanda-diagnostico.md; reports/week-01/logs/fernanda-smoke-antes.txt; reports/week-01/logs/fernanda-smoke-falla.txt; reports/week-01/logs/fernanda-smoke-corregido.txt; commit propio 780833cc8ee890ea21211cbd1ff64ec951e5a55b."
+    },
+    {
+      "command": "make setup && make feedback",
+      "result": "Validacion local para el repositorio de pruebas: ambos comandos finalizaron con codigo 0 con la preparacion en Makefile y el workflow original. La prueba smoke y el bundle Android siguen aprobando, sin modificar las aserciones ni los umbrales. Los resultados de GitHub Actions se consultan por el SHA publicado.",
+      "evidence": "reports/week-01/logs/makefile-setup.txt; reports/week-01/logs/makefile-feedback.txt; README.md, Inicio reproducible."
     }
   ]
 }
