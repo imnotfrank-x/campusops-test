@@ -40,7 +40,9 @@ make setup
 make feedback
 ```
 
-`make setup` comprueba si la copia Git es superficial. Sólo en ese caso ejecuta `git fetch --unshallow --tags origin` antes de `npm ci`, para que el evaluador pueda consultar el padre del commit de evidencias. La descarga conserva el SHA de `HEAD` y requiere acceso al remoto `origin`; si falla la consulta de Git o la descarga, la preparación se detiene. En una copia con historial completo no descarga historial. El workflow semanal original ya llama a `make setup` antes de evaluar.
+`make setup` comprueba si la copia Git es superficial. Sólo en ese caso ejecuta `git fetch --unshallow origin` antes de `npm ci`, para que el evaluador pueda consultar el padre del commit de evidencias. La descarga conserva el SHA de `HEAD` y requiere acceso al remoto `origin`; si falla la consulta de Git o la descarga, la preparación se detiene. En una copia con historial completo no descarga historial. El workflow semanal original ya llama a `make setup` antes de evaluar.
+
+La descarga no usa `--tags`: al evaluar una etiqueta anotada, Actions puede crear una referencia local ligera al mismo SHA. Pedir la actualización explícita de etiquetas provoca `would clobber existing tag`; completar sólo el historial conserva esa referencia y permite comprobar la evidencia congelada.
 
 La receta requiere un shell POSIX, disponible en Ubuntu y Git Bash. En PowerShell con GNU Make y Git for Windows, si `sh` no está en el PATH, se puede indicar su ubicación con `make 'SHELL=C:/Program Files/Git/bin/sh.exe' setup` (ajusta la ruta a tu instalación).
 

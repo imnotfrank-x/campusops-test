@@ -6,7 +6,7 @@ NPM ?= npm
 setup:
 	@shallow=$$(git rev-parse --is-shallow-repository) && \
 	if [ "$$shallow" = "true" ]; then \
-		git fetch --unshallow --tags origin; \
+		git fetch --unshallow origin; \
 	fi
 	$(NPM) ci
 
