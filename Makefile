@@ -4,6 +4,10 @@ NPM ?= npm
 .PHONY: setup verify feedback run run-backend package
 
 setup:
+	@shallow=$$(git rev-parse --is-shallow-repository) && \
+	if [ "$$shallow" = "true" ]; then \
+		git fetch --unshallow --tags origin; \
+	fi
 	$(NPM) ci
 
 verify:

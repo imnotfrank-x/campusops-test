@@ -36,7 +36,9 @@ En esa revisión, sobre `6d7d06c036c9f6cf254dd3912badb83e550383af`, el reporte d
 
 ## Integridad y ajustes documentados
 
-Se comprobó con `git diff --exit-code 635d471c3bce751720adbe0e2c50bcd245520d51 -- course-tests tools/course_public_evaluator.py App.tsx package.json package-lock.json Makefile` que esos archivos coinciden con el inicio. El resultado fue código 0, sin diferencias. El checkout del workflow conserva el ajuste anterior `fetch-depth: 0`, necesario para consultar el padre del commit de evidencias; las pruebas y sus umbrales siguen iguales.
+En la revisión anterior se comprobó con `git diff --exit-code 635d471c3bce751720adbe0e2c50bcd245520d51 -- course-tests tools/course_public_evaluator.py App.tsx package.json package-lock.json Makefile` que esos archivos coincidían con el inicio. El resultado fue código 0, sin diferencias. Entonces el checkout del workflow contenía `fetch-depth: 0` para consultar el padre del commit de evidencias.
+
+El ajuste actual restaura el workflow semanal original y traslada la descarga del historial a `make setup`, antes de `npm ci` y sólo para copias superficiales. La preparación conserva el SHA evaluado y se detiene si Git falla. Las pruebas, el evaluador y sus umbrales siguen originales. El comportamiento y la necesidad de actualizar las evidencias después de registrar el cambio se documentan en [Inicio reproducible](../README.md#inicio-reproducible). Los resultados anteriores de este documento corresponden a sus SHA registrados; no certifican una nueva ejecución de GitHub Actions con este ajuste.
 
 Tres logs se convirtieron de UTF-16 a UTF-8, normalizando finales de línea y líneas vacías, sin cambiar mensajes, tiempos ni códigos de salida. Los bytes anteriores siguen accesibles en los commits originales. La aclaración de la revisión de Jarumi se añadió después de su texto, conservando su predicción y su resultado.
 
